@@ -16,4 +16,5 @@ const userEvents = require('./userEvents')
 
 $(() => {
   $('#sign-up').on('submit', userEvents.onSignUp)
+  $('#sign-in').on('submit', userEvents.onSignIn)
 })
