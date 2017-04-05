@@ -1,10 +1,9 @@
 const api = require('./api')
 const ui = require('./ui')
-const getFormFields = require('../../lib/get-form-fields')
+const getFormFields = require('../../../lib/get-form-fields')
 
 const onSignUp = function (event) {
   event.preventDefault()
-  console.log('you signed up yo!')
 
   const data = getFormFields(this)
 
@@ -15,7 +14,6 @@ const onSignUp = function (event) {
 
 const onSignIn = function (event) {
   event.preventDefault()
-  console.log('you signed in yo!')
 
   const data = getFormFields(this)
 
@@ -26,7 +24,6 @@ const onSignIn = function (event) {
 
 const onChangePW = function (event) {
   event.preventDefault()
-  console.log('you changed the PW!')
 
   const data = getFormFields(this)
 
@@ -34,8 +31,19 @@ const onChangePW = function (event) {
     .then(ui.onChangePWSuccess)
     .catch(ui.onChangePWFailure)
 }
+
+const onSignOut = function (event) {
+  event.preventDefault()
+
+  const data = getFormFields(this)
+
+  api.signOut(data)
+    .then(ui.signOutSuccess)
+    .catch(ui.signOutFailure)
+}
 module.exports = {
   onSignUp,
   onSignIn,
-  onChangePW
+  onChangePW,
+  onSignOut
 }

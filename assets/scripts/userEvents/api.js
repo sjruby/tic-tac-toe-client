@@ -1,5 +1,5 @@
-const app = require('../app.js')
-const store = require('./store.js')
+const app = require('../../app.js')
+const store = require('../store.js')
 
 const signUp = function (data) {
   return $.ajax({
@@ -28,8 +28,18 @@ const changePassword = function (data) {
   })
 }
 
+const signOut = function () {
+  return $.ajax({
+    method: 'DELETE',
+    url: app.host + '/sign-out/' + store.store.id,
+    headers: {
+      Authorization: 'Token token=' + store.store.token
+    }
+  })
+}
 module.exports = {
   signUp,
   signIn,
-  changePassword
+  changePassword,
+  signOut
 }
