@@ -10,7 +10,18 @@ const newGameSuccess = function (data) {
 const newGameFailure = function (response) {
   $gameStatus.text('hmmm somthing is wrong...if I had to guess its user error')
 }
+
+const clickSuccess = function (data) {
+  $gameStatus.text(store.store.email + ' created game number ' + gameStore.gameStore.id)
+}
+
+const clickFaliure = function (response) {
+  $gameStatus.text('hmmm somthing is wrong...if I had to guess its user error')
+}
+
 module.exports = {
   newGameSuccess,
-  newGameFailure
+  newGameFailure,
+  clickSuccess,
+  clickFaliure
 }

@@ -1,6 +1,5 @@
 const api = require('./gameEventsapi')
 const ui = require('./gameEventsUI')
-const getFormFields = require('../../../lib/get-form-fields')
 
 const onNewGame = function (event) {
   event.preventDefault()
@@ -9,6 +8,11 @@ const onNewGame = function (event) {
     .catch(ui.newGameFailure)
 }
 
+const onClick = function (div) {
+  api.tttClick(this.id)
+}
+
 module.exports = {
-  onNewGame
+  onNewGame,
+  onClick
 }
