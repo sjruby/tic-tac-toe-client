@@ -1,5 +1,6 @@
 const $signUpUI = $('#signUpMessage')
 const $signInUI = $('#signInMessage')
+const $changePWUi = $('#changePWMessage')
 const store = require('./store')
 
 const onSignUpSuccess = function () {
@@ -19,9 +20,19 @@ const onSignInError = function (response) {
   $signInUI.text('It failed...heres why...')
 }
 
+const onChangePWSuccess = () => {
+  $changePWUi.text('You succesfully changed your PW...now play!')
+}
+
+const onChangePWFailure = () => {
+  $changePWUi.text('It failed...try again??')
+}
+
 module.exports = {
   onSignUpSuccess,
   onSignUpError,
   onSignInSuccess,
-  onSignInError
+  onSignInError,
+  onChangePWSuccess,
+  onChangePWFailure
 }

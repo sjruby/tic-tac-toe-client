@@ -24,7 +24,18 @@ const onSignIn = function (event) {
     .catch(ui.onSignInError)
 }
 
+const onChangePW = function (event) {
+  event.preventDefault()
+  console.log('you changed the PW!')
+
+  const data = getFormFields(this)
+
+  api.changePassword(data)
+    .then(ui.onChangePWSuccess)
+    .catch(ui.onChangePWFailure)
+}
 module.exports = {
   onSignUp,
-  onSignIn
+  onSignIn,
+  onChangePW
 }
