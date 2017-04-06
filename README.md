@@ -36,3 +36,34 @@ Day 2: Finalize click handlers to make sure it is updatesbackend game state
       STRECH GOAL: Transition console game logic to site
 
 Day 3: Finalize game engine logic and deal with the inevitable errors I find in day 1/2
+
+## Day 1 Accomplishments
+Finished everything I wanted to for day 1...victory!  The user authentication
+stuff works, it is a seris of modle forms.  The new game button works once a user
+is loged in, it updates the back end and pulls back a JS object called game
+store that I will use to check for win/loss/catsgame. I also have a click handler
+that succsfully updates the gamestore object and the back end with X based on
+where in the 3x3 grid you click.
+
+## Day 2 Plan
+Looking at my inital project plan I WAY under planed for day 2 and some of the
+steps necessary for the MVP.  Updated day two plan:
+
+1. Add image flip to the x click handler
+2. Merge click handler branch wiht master
+3. Spin off a game logic branch
+4. Add a turn handler to check game array for WHOSE turn it is
+5. Merge game logic back to master banch
+6. splin off O click handler branch
+7. have the game auto swithc betweent X/O's turns using function from step 4
+8. Make sure the image updates based on X/O's turn
+9. Merge O click handler back into master branch
+10. Sping off check for win/cats game branch
+11. Integrate logic to check GAMESTORE object for a win/loss
+12. make sure when win/loss occurs it passes gameOver:true to back end
+13. make sure when win/loss occurs it updates the gameStatus display on my front end
+14. Merge back into master branch
+15. Split off new branch call, newGameBoardReset
+16. Make sure new game button clears exisitng game board
+
+That might be enough for day two...
