@@ -15,6 +15,7 @@ const newGame = function () {
 
 const tttClick = function (clickedId) {
   const clickedCell = clickedId * 1
+
   return $.ajax({
     method: 'PATCH',
     url: app.host + '/games/' + gameStore.gameStore.id,
