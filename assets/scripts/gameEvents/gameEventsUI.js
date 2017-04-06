@@ -5,12 +5,25 @@ const gameStore = require('./gameEngine/gameStore')
 const newGameSuccess = function (data) {
   gameStore.gameStore = data.game
   $gameStatus.text(store.store.email + ' created game number ' + gameStore.gameStore.id)
+  console.log(data.game.cells)
 }
 
 const newGameFailure = function (response) {
   $gameStatus.text('hmmm somthing is wrong...if I had to guess its user error')
 }
+
+const clickSuccess = function (data) {
+  gameStore.gameStore = data.game
+  console.log(data.game.cells)
+}
+
+const clickFaliure = function (response) {
+  $gameStatus.text('hmmm somthing is wrong...if I had to guess its user error')
+}
+
 module.exports = {
   newGameSuccess,
-  newGameFailure
+  newGameFailure,
+  clickSuccess,
+  clickFaliure
 }
