@@ -33,7 +33,20 @@ const onClick = function (div) {
     .catch(ui.clickFaliure)
 }
 
+const makeTheBoard = function () {
+  event.preventDefault()
+  console.log('hey you clicked the right thing')
+  const newSrc = '/assets/images/blank-square.png'
+  $('.game-board').children().children().children().attr('src', newSrc)
+  api.newGame()
+    .then(ui.newGameSuccess)
+    .catch(ui.newGameFailure)
+  $('.ttt-board').on('click', onClick)
+}
+
+// <img src="/assets/images/blank-square.png" alt="blank-square">
 module.exports = {
   onNewGame,
-  onClick
+  onClick,
+  makeTheBoard
 }

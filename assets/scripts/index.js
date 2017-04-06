@@ -25,4 +25,5 @@ const gameEvents = require('./gameEvents/gameEvents')
 $(() => {
   $('#new-game').on('submit', gameEvents.onNewGame)
   $('.ttt-board').on('click', gameEvents.onClick)
+  $('#reset-game').on('click', gameEvents.makeTheBoard)
 })
