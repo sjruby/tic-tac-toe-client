@@ -14,17 +14,23 @@ const onNewGame = function (event) {
 // is being fliped.  The flipPicture function will take a callback function
 // from the game engine to know if it shoudl be fliping x or o
 const flipPicture = function (clickedId, turnCheck) {
+// figures out what div # clicked what
   const $clickedCell = $('#' + clickedId)
-  const turn = turnCheck(gameStore.gameStore.game.cells)
+// check the API's game board to see whose turn it is
+  const turn = turnCheck(gameStore.gameStore.cells)
+// set the new image, should it be x or o
   const newSrc = '/assets/images/square-' + turn + '.png'
+// each div in the board has one img, so replace that img with the new src
   $clickedCell.children().attr('src', newSrc)
+// turn the click watcher off for teh cell so the image can't be fliped AND
+// the user can't overwrite anythign in the game array
+  $clickedCell.off('click')
 }
 
 const onClick = function (div) {
-  api.tttClick(this.id)
-    .then(ui.clickSucces)
+  api.tttClick(this.id, turnSwitcher.whoseTurn)
+    .then(ui.clickSuccess, flipPicture(this.id, turnSwitcher.whoseTurn))
     .catch(ui.clickFaliure)
-      // .then(ui.clickSuccess, flipPicture(this.id, turnSwitcher.whoseTurn))
 }
 
 module.exports = {

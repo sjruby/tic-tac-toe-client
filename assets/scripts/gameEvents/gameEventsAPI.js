@@ -13,8 +13,10 @@ const newGame = function () {
   })
 }
 
-const tttClick = function (clickedId) {
+const tttClick = function (clickedId, turnCheck) {
   const clickedCell = clickedId * 1
+
+  const value = turnCheck(gameStore.gameStore.cells)
 
   return $.ajax({
     method: 'PATCH',
@@ -26,7 +28,7 @@ const tttClick = function (clickedId) {
       'game': {
         'cell': {
           'index': clickedCell,
-          'value': 'x'
+          'value': value
         },
         'over': false
       }
