@@ -14,8 +14,7 @@ const newGame = function () {
 }
 
 const tttClick = function (clickedId) {
-  const test = clickedId * 1
-
+  const clickedCell = clickedId * 1
   return $.ajax({
     method: 'PATCH',
     url: app.host + '/games/' + gameStore.gameStore.id,
@@ -25,7 +24,7 @@ const tttClick = function (clickedId) {
     data: {
       'game': {
         'cell': {
-          'index': test,
+          'index': clickedCell,
           'value': 'x'
         },
         'over': false
