@@ -14,26 +14,23 @@ const newGame = function () {
 }
 
 const tttClick = function (clickedId) {
-  const squareChanged = {
-    game: {
-      cell: {
-        index: clickedId,
-        value: 'x'
-      },
-      over: false
-    }
-  }
-
-  const data = JSON.stringify(squareChanged)
-  console.log(data)
+  const test = clickedId * 1
 
   return $.ajax({
     method: 'PATCH',
-    url: app.host + '/games/:' + gameStore.gameStore.id,
+    url: app.host + '/games/' + gameStore.gameStore.id,
     headers: {
       Authorization: 'Token token=' + store.store.token
     },
-    data: data
+    data: {
+      'game': {
+        'cell': {
+          'index': test,
+          'value': 'x'
+        },
+        'over': false
+      }
+    }
   })
 }
 

@@ -1,4 +1,4 @@
-const api = require('./gameEventsapi')
+const api = require('./gameEventsAPI')
 const ui = require('./gameEventsUI')
 
 const onNewGame = function (event) {
@@ -10,6 +10,8 @@ const onNewGame = function (event) {
 
 const onClick = function (div) {
   api.tttClick(this.id)
+    .then(ui.clickSuccess)
+    .catch(ui.clickFaliure)
 }
 
 module.exports = {
