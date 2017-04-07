@@ -35,8 +35,19 @@ const tttClick = function (clickedId, turnCheck) {
     }
   })
 }
+const getGames = function () {
+  console.log("the require api is pinting to right function")
+  return $.ajax({
+    method: 'GET',
+    url: config.apiOrigins.production + '/games',
+    headers: {
+      Authorization: 'Token token=' + store.store.token
+    }
+  })
+}
 
 module.exports = {
   newGame,
-  tttClick
+  tttClick,
+  getGames
 }

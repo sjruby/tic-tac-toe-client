@@ -58,7 +58,7 @@ const didSomeOnWin = function (data) {
       .done(ui.endGameSuccess)
       .catch(ui.endGameFailure)
   }
-  console.log(result)
+  return result
 }
 
 module.exports = {

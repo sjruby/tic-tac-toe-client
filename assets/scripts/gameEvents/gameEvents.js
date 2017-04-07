@@ -51,7 +51,7 @@ const onClick = function (div) {
 const makeTheBoard = function () {
   event.preventDefault()
   console.log('hey you clicked the right thing')
-  const newSrc = '/assets/images/blank-square.png'
+  const newSrc = 'https://i.imgur.com/jEDl0rb.png'
   $('.game-board').children().children().children().attr('src', newSrc)
   api.newGame()
     .then(ui.newGameSuccess)
@@ -59,10 +59,18 @@ const makeTheBoard = function () {
   $('.ttt-board').on('click', onClick)
 }
 
+const pullGameStats = function () {
+  console.log('you hit the right button')
+  api.getGames()
+    .then(ui.getGamesSuccesss)
+    .catch(ui.getGamesFaliure)
+}
+
 // <img src="/assets/images/blank-square.png" alt="blank-square">
 module.exports = {
   onNewGame,
   onClick,
   makeTheBoard,
-  createNewGame
+  createNewGame,
+  pullGameStats
 }
