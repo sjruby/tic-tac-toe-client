@@ -4,12 +4,14 @@ const $signOut = $('.sign-out')
 const $startGame = $('.start-game')
 const $signUp = $('.sign-up-button')
 const $signIn = $('.sign-in-button')
+const $gameStats = $('.game-stats')
 
 const showThingsOnSignIn = function () {
   $gameBoard.css('visibility', 'visible')
   $changePwButton.css('visibility', 'visible')
   $signOut.css('visibility', 'visible')
   $startGame.css('visibility', 'visible')
+  $gameStats.css('visibility', 'visible')
 }
 
 const showThingsOnSignOut = function () {
