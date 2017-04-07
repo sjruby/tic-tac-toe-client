@@ -29,8 +29,8 @@ const flipPicture = function (clickedId, turnCheck) {
   // const newSrc = 'http://i.imgur.com/AWv10hk.png'
   const setImgurSrc = function (turn) {
     if (turn === 'o') {
-      return 'http://i.imgur.com/AWv10hk.png'
-    } else { return 'http://i.imgur.com/evjjjNV.png' }
+      return 'https://i.imgur.com/AWv10hk.png'
+    } else { return 'https://i.imgur.com/evjjjNV.png' }
   }
   const newSrc = setImgurSrc(turn)
 
