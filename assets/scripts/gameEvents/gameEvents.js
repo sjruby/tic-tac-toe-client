@@ -26,7 +26,15 @@ const flipPicture = function (clickedId, turnCheck) {
 // check the API's game board to see whose turn it is
   const turn = turnCheck(gameStore.gameStore.cells)
 // set the new image, should it be x or o
-  const newSrc = '/assets/images/square-' + turn + '.png'
+  // const newSrc = 'http://i.imgur.com/AWv10hk.png'
+  const setImgurSrc = function (turn) {
+    if (turn === 'o') {
+      return 'http://i.imgur.com/AWv10hk.png'
+    } else { return 'http://i.imgur.com/evjjjNV.png' }
+  }
+  const newSrc = setImgurSrc(turn)
+
+  // const src = newSrc(turn)
 // each div in the board has one img, so replace that img with the new src
   $clickedCell.children().attr('src', newSrc)
 // turn the click watcher off for teh cell so the image can't be fliped AND
