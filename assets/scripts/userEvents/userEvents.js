@@ -1,6 +1,8 @@
 const api = require('./api')
 const ui = require('./ui')
 const getFormFields = require('../../../lib/get-form-fields')
+const showStuff = require('./showStuff')
+const hideStuff = require('./hideStuff')
 
 const onSignUp = function (event) {
   event.preventDefault()
@@ -38,7 +40,7 @@ const onSignOut = function (event) {
   const data = getFormFields(this)
 
   api.signOut(data)
-    .then(ui.signOutSuccess)
+    .done(ui.signOutSuccess, showStuff.showThingsOnSignOut, hideStuff.hideThingsOnSignOut)
     .catch(ui.signOutFailure)
 }
 module.exports = {

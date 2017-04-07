@@ -2,6 +2,8 @@ const api = require('./gameEventsAPI')
 const ui = require('./gameEventsUI')
 const turnSwitcher = require('./gameEngine/turnSwitcher')
 const gameStore = require('./gameEngine/gameStore')
+const showStuff = require('./showStuff')
+const hideStuff = require('./hideStuff')
 
 const onNewGame = function (event) {
   event.preventDefault()
@@ -10,6 +12,11 @@ const onNewGame = function (event) {
     .catch(ui.newGameFailure)
 }
 
+const createNewGame = function () {
+  api.newGame()
+    .done(showStuff.showThingsOnSignIn(), hideStuff.hideThingsOnSignIn(), ui.newGameSuccess)
+    .catch(ui.newGameFailure)
+}
 // this function is used below in the on click function to control how the image is
 // is being fliped.  The flipPicture function will take a callback function
 // from the game engine to know if it shoudl be fliping x or o
@@ -48,5 +55,6 @@ const makeTheBoard = function () {
 module.exports = {
   onNewGame,
   onClick,
-  makeTheBoard
+  makeTheBoard,
+  createNewGame
 }

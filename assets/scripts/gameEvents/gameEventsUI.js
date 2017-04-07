@@ -5,7 +5,7 @@ const checkGameStatus = require('./gameEngine/checkGameStatus')
 
 const newGameSuccess = function (data) {
   gameStore.gameStore = data.game
-  $gameStatus.text(store.store.email + ' created game number ' + gameStore.gameStore.id)
+  $gameStatus.text('Welcome to the game ' + store.store.email + 'Click the board to get started')
 }
 
 const newGameFailure = function (response) {

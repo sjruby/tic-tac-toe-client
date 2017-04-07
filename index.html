@@ -17,12 +17,112 @@
   <div class="container">
 
     <!--Header of the page-->
+    <div class=row>
+      <div class="col-xs-12">
+    <div class="well well-lg">
+      <h1>
+        A tic-tac-toe game
+      </h1>
+      </div>
+    </div>
+    </div>
 
     <div class="row">
       <div class="col-xs-12">
-        <h1>Lawton Street Tic-Tac-Toe</h1>
+      <div>
+        <h3 id="game-status" class="text-center bg-info">
+          Sign in to start a game...or Sign up!
+        </h3>
       </div>
+        <div class="col-xs-12">
+        </div>
     </div>
+  </div>
+
+      <!--Here goes the sign up modle-->
+      <!-- Button trigger modal -->
+      <div class="row signInUpButtons">
+        <div class="col-xs-6">
+
+          <button type="button" class="btn btn-primary btn-lg sign-up-button" data-toggle="modal" data-target="#signUpModal">
+        Sign Up
+      </button>
+          <!-- Sign up Modal -->
+          <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signUpLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="signUpLabel">Join the brawl...if you dare!</h4>
+                </div>
+                <div class="modal-body">
+
+                  <form class='userEvents' id='sign-up'>
+                    <div class="form-group">
+                      <input type="text" name="credentials[email]" id="signUpEmail" placeholder="Enter Email">
+                      <input type="password" name="credentials[password]" id="signUpPassword" placeholder="Enter Email">
+                      <input type="password" name="credentials[password_confirmation]" id="signUpPassword_confirmation" placeholder="Enter Email">
+                    </div>
+                    <button type="submit" class="btn btn-default">Get Book</button>
+                  </form>
+
+                </div>
+                <div class="modal-footer">
+                  <div class="row">
+                    <div class="col-xs-8">
+                      <p id="signUpMessage"> </p>
+                    </div>
+                    <div class="col-xs-4">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close Form</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-xs-6">
+          <!--Here goes the sign in modle-->
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-primary btn-lg sign-in-button" data-toggle="modal" data-target="#signInModal">
+        Sign in.
+      </button>
+          <!-- Sign in Modal -->
+          <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="signInModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="signInModalLabel">Ready...Set..TOE</h4>
+                </div>
+                <div class="modal-body">
+
+                  <form class='userEvents' id='sign-in'>
+                    <div class="form-group">
+                      <input type="text" name="credentials[email]" id="email" placeholder="Enter Email">
+                      <input type="password" name="credentials[password]" id="password" placeholder="Enter PW">
+                    </div>
+                    <button type="submit" class="btn btn-default">Sign In</button>
+                  </form>
+
+                </div>
+                <div class="modal-footer">
+                  <div class="row">
+                    <div class="col-xs-8">
+                      <p id="signInMessage"> </p>
+                    </div>
+                    <div class="col-xs-4">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Close Form</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
 
     <!--3 x 3 Tic Tac Toe game board-->
 
@@ -66,104 +166,9 @@
       </div>
     </div>
 
-    <!--Game board footer including new game button and game status button-->
-
-    <div class="row game-board-footer">
-
-      <div class="col-xs-8">
-        <p id="game-status">
-          SIGN IN TO START A GAME...
-        </p>
-      </div>
-
-      <div class="col-xs-4">
-        <form class="gameEvents" id='new-game'>
-          <button type="submit" class="btn btn-primary btn-lg">Start a new game</button>
-        </form>
-      </div>
-
-    </div>
-
-    <!--Here goes the sign up modle-->
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#signUpModal">
-  Join the game!
-</button>
-    <!-- Sign up Modal -->
-    <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signUpLabel">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="signUpLabel">Join the brawl...if you dare!</h4>
-          </div>
-          <div class="modal-body">
-
-            <form class='userEvents' id='sign-up'>
-              <div class="form-group">
-                <input type="text" name="credentials[email]" id="signUpEmail" placeholder="Enter Email">
-                <input type="password" name="credentials[password]" id="signUpPassword" placeholder="Enter Email">
-                <input type="password" name="credentials[password_confirmation]" id="signUpPassword_confirmation" placeholder="Enter Email">
-              </div>
-              <button type="submit" class="btn btn-default">Get Book</button>
-            </form>
-
-          </div>
-          <div class="modal-footer">
-            <div class="row">
-              <div class="col-xs-8">
-                <p id="signUpMessage"> </p>
-              </div>
-              <div class="col-xs-4">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close Form</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!--Here goes the sign in modle-->
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#signInModal">
-  Start playing
-</button>
-    <!-- Sign in Modal -->
-    <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="signInModalLabel">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="signInModalLabel">Ready...Set..TOE</h4>
-          </div>
-          <div class="modal-body">
-
-            <form class='userEvents' id='sign-in'>
-              <div class="form-group">
-                <input type="text" name="credentials[email]" id="email" placeholder="Enter Email">
-                <input type="password" name="credentials[password]" id="password" placeholder="Enter PW">
-              </div>
-              <button type="submit" class="btn btn-default">Sign In</button>
-            </form>
-
-          </div>
-          <div class="modal-footer">
-            <div class="row">
-              <div class="col-xs-8">
-                <p id="signInMessage"> </p>
-              </div>
-              <div class="col-xs-4">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close Form</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <!--Here goes the change PW modle-->
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#changePW">
+    <button type="button" class="btn btn-primary btn-lg change-pw-button" data-toggle="modal" data-target="#changePW">
   Change Password
 </button>
     <!-- Change PW Modal -->
@@ -200,10 +205,10 @@
     </div>
 
     <!--The sign out button will be right here -->
-    <form class='userEvents' id='sign-out'>
+    <form class='userEvents sign-out' id='sign-out'>
       <button type="submit" class="btn btn-primary btn-lg">Flee...</button>
     </form>
-    <form class='gameEvents' id='reset-game'>
+    <form class='gameEvents start-game' id='reset-game'>
       <button type="submit" class="btn btn-primary btn-lg">Start the game again</button>
     </form>
 

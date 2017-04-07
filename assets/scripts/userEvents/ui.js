@@ -2,6 +2,7 @@ const $signUpUI = $('#signUpMessage')
 const $signInUI = $('#signInMessage')
 const $changePWUi = $('#changePWMessage')
 const $gameStatus = $('#game-status')
+const gameEvents = require('../gameEvents/gameEvents')
 const store = require('../store')
 
 const onSignUpSuccess = function () {
@@ -17,8 +18,8 @@ const onSignUpError = function (response) {
 const onSignInSuccess = function (data) {
   store.store = data.user
   $signInUI.text('You have signed in go have some fun!')
-  $gameStatus.text('You signed in! Click new game to start!')
   $('#signInModal').modal('hide')
+  gameEvents.createNewGame()
 }
 
 const onSignInError = function (response) {
