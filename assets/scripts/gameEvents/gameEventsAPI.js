@@ -1,11 +1,11 @@
-const app = require('../../app.js')
+const config = require('../config.js')
 const store = require('../store.js')
 const gameStore = require('./gameEngine/gameStore')
 
 const newGame = function () {
   return $.ajax({
     method: 'POST',
-    url: app.host + '/games',
+    url: config.apiOrigins.production + '/games',
     headers: {
       Authorization: 'Token token=' + store.store.token
     },
@@ -20,7 +20,7 @@ const tttClick = function (clickedId, turnCheck) {
 
   return $.ajax({
     method: 'PATCH',
-    url: app.host + '/games/' + gameStore.gameStore.id,
+    url: config.apiOrigins.production + '/games/' + gameStore.gameStore.id,
     headers: {
       Authorization: 'Token token=' + store.store.token
     },

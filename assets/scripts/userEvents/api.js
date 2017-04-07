@@ -1,9 +1,9 @@
-const app = require('../../app.js')
 const store = require('../store.js')
+const config = require('../config.js')
 
 const signUp = function (data) {
   return $.ajax({
-    url: app.host + '/sign-up',
+    url: config.apiOrigins.production + '/sign-up',
     method: 'POST',
     data: data
   })
@@ -11,7 +11,8 @@ const signUp = function (data) {
 
 const signIn = function (data) {
   return $.ajax({
-    url: app.host + '/sign-in',
+    url: config.apiOrigins.production + '/sign-in',
+    // url: app.host + '/sign-in',
     method: 'POST',
     data: data
   })
@@ -20,7 +21,7 @@ const signIn = function (data) {
 const changePassword = function (data) {
   return $.ajax({
     method: 'PATCH',
-    url: app.host + '/change-password/' + store.store.id,
+    url: config.apiOrigins.production + '/change-password/' + store.store.id,
     headers: {
       Authorization: 'Token token=' + store.store.token
     },
@@ -31,7 +32,7 @@ const changePassword = function (data) {
 const signOut = function () {
   return $.ajax({
     method: 'DELETE',
-    url: app.host + '/sign-out/' + store.store.id,
+    url: config.apiOrigins.production + '/sign-out/' + store.store.id,
     headers: {
       Authorization: 'Token token=' + store.store.token
     }
