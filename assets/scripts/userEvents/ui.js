@@ -38,6 +38,7 @@ const onChangePWFailure = () => {
 
 const signOutSuccess = () => {
   $gameStatus.text('You left meeeeeee WHYYYYY')
+  gameEvents.clearTheBoard()
 }
 
 const signOutFailure = () => {

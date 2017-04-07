@@ -59,6 +59,13 @@ const makeTheBoard = function () {
   $('.ttt-board').on('click', onClick)
 }
 
+const clearTheBoard = function () {
+  event.preventDefault()
+  console.log('hey you clicked the right thing')
+  const newSrc = 'https://i.imgur.com/jEDl0rb.png'
+  $('.game-board').children().children().children().attr('src', newSrc)
+}
+
 const pullGameStats = function () {
   console.log('you hit the right button')
   api.getGames()
@@ -72,5 +79,6 @@ module.exports = {
   onClick,
   makeTheBoard,
   createNewGame,
-  pullGameStats
+  pullGameStats,
+  clearTheBoard
 }
