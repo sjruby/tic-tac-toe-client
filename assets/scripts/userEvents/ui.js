@@ -9,6 +9,7 @@ const onSignUpSuccess = function () {
   $signUpUI.text('It worked! Go sign in and have some fun!')
   $gameStatus.text('You signed up! Now go sign in to play!')
   $('#signUpModal').modal('hide')
+  $('#sign-up')[0].reset()
 }
 
 const onSignUpError = function (response) {
@@ -20,6 +21,7 @@ const onSignInSuccess = function (data) {
   $signInUI.text('You have signed in go have some fun!')
   $('#signInModal').modal('hide')
   gameEvents.createNewGame()
+  $('#sign-in')[0].reset()
 }
 
 const onSignInError = function (response) {
@@ -30,8 +32,8 @@ const onChangePWSuccess = () => {
   $changePWUi.text('You succesfully changed your PW...now play!')
   $gameStatus.text('You changed your PW...play a game already!')
   $('#changePW').modal('hide')
+  $('#change-pw')[0].reset()
 }
-
 const onChangePWFailure = () => {
   $changePWUi.text('It failed...try again??')
 }
