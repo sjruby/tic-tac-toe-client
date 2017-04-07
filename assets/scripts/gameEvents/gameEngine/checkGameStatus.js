@@ -33,7 +33,7 @@ const didSomeOnWin = function (data) {
   let result = 'none'
 
   if (arraysToCheck.some(xWins)) {
-    $gameStatus.text('X you wone... try not to be a jerk about it... you went first afterall')
+    $gameStatus.text('X you won... try not gloat about it... you went first afterall')
     result = 'x Wins'
     $gameBoard.off('click')
     api.endGame()
@@ -42,7 +42,7 @@ const didSomeOnWin = function (data) {
   }
 
   if (arraysToCheck.some(oWins)) {
-    $gameStatus.text('O you won...rub it in that fools face')
+    $gameStatus.text('O you won...rub it in that fools face, X should never loose')
     result = 'o Wins'
     $gameBoard.off('click')
     api.endGame()
@@ -51,7 +51,7 @@ const didSomeOnWin = function (data) {
   }
 
   if (arraysToCheck.every(cRow)) {
-    $gameStatus.text('A TIE...THERE ARE NO TIES...except in tic tac toe')
+    $gameStatus.text('A TIE...yeah that sounds right')
     result = 'CATS GAME'
     $gameBoard.off('click')
     api.endGame()

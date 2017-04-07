@@ -7,18 +7,18 @@ const store = require('../store')
 
 const onSignUpSuccess = function () {
   $signUpUI.text('It worked! Go sign in and have some fun!')
-  $gameStatus.text('You signed up! Now go sign in to play!')
+  $gameStatus.text('You signed up! You have to sign in to play')
   $('#signUpModal').modal('hide')
   $('#sign-up')[0].reset()
 }
 
 const onSignUpError = function (response) {
-  $signUpUI.text('It failed...heres why:' + response)
+  $signUpUI.text('It failed! Do you already have an account? Do your Passwords match?')
 }
 
 const onSignInSuccess = function (data) {
   store.store = data.user
-  $signInUI.text('You have signed in go have some fun!')
+  $signInUI.text('You have signed-click the board to get started!')
   $('#signInModal').modal('hide')
   gameEvents.createNewGame()
   $('#sign-in')[0].reset()

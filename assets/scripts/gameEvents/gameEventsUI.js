@@ -8,7 +8,7 @@ const $gameStatsDisplay = $('#game-stats-here')
 const newGameSuccess = function (data) {
   gameStore.gameStore = data.game
   console.log(gameStore.gameStore)
-  $gameStatus.text('Welcome to the game ' + store.store.email + 'Click the board to get started')
+  $gameStatus.text('Welcome to the game ' + store.store.email + ' Click the board to get started')
 }
 
 const newGameFailure = function (response) {
