@@ -1,69 +1,86 @@
 [![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
 
-# Tic Tac Toe Project
+## Tic Tac Toe Project
 
-Link to game:
-Technologies used:
-
-## Minimum Viable Product
-
-The requirments for the Tic Tac Toe app itself are:
-
+The primary goals of this project are to:
 1. Use a tic-tac-toe game egine written by myself
 2. Render the game board in a browser
 3. Switch turns as the user clicks through
 4. Visually display the outcome of the game
-5. Have login/logout/change pass word functionality.
+5. Interact with the GA Game API to update game staus
+6. Pull out game stats from the game API
+7. Have login/logout/change pass word functionality.
+
+Link to game:https: //sjruby.github.io/tic-tac-toe-client/
+
+##Technologies used:
+
 
 ## User Stories
-1. As a tic-tac-toe expert, I want the game board to declare a winner
+1. As a tic-tac-toe expert, I want the page to tell me if O or X won
 2. As a site user, I want to track my wins/losses/draws
 3. As a site user, I want to be able to login/out/change my PW
 4. As a tic-tac-toe player, I want the game to automatically switch turns
-5. As a user, I want to be able to start a new game ONLY when the current one is complete
+5. As a user, I want to be able to start a new game whenever I want.
 
-## Initial Project Plan
 
-Let's assume I don't want to work this weekend, I'm feeling optomistic right now.  I already have written Javascript logic built for the console that evaluates a tic-tac-toe array.  I should be able to refactor that quickly, b/c it is the same general logic. That gives me 3 days to work through all of the other Tic-Tac-Toe requirments.
+## Final Wirefram
+The final wire frame, that includes the hide/show flow when users click on buttons: LINK HERE
 
-Day 1: Build out my wire frame for tic-tac-toe app
-       Add login/logout/change PW logic
-       Click handler to create a new game confirm backend recofnizes game
-       STRECH GOAL: Click handler to for the 3x3 grid that updates the game states
+## Approach to Building the App
+I broke it down the requirements three high level tasks with sub tasks under that:
+  1. Interact with the API/jQuery text Updates
+  - Authorization events(sign in/up log out)
+  - Create a new game
+  - Game status events(updated the cells array) and game over value
+  - Pull list of games
+  - Make simple jQUERY .text() updates.  NOTHING FANCY
 
-Day 2: Finalize click handlers to make sure it is updatesbackend game state
-      Deploy site to Git Hub pages
-      STRECH GOAL: Transition console game logic to site
+  2. Interact with the tic-tac-toe board
+  - have the click flip a tile
+  - make a function that switches turns
+  - make sure user cannot interact with board when game has not started/is not over
+  - prevent uer from clicking a square that's been clicked
 
-Day 3: Finalize game engine logic and deal with the inevitable errors I find in day 1/2
+  3. Gamelogic
+  - evaluate a game board for win/loss/cats game
+  - update display of game logic
 
-## Day 1 Accomplishments
-Finished everything I wanted to for day 1...victory!  The user authentication
-stuff works, it is a seris of modle forms.  The new game button works once a user
-is loged in, it updates the back end and pulls back a JS object called game
-store that I will use to check for win/loss/catsgame. I also have a click handler
-that succsfully updates the gamestore object and the back end with X based on
-where in the 3x3 grid you click.
+By breaking it down like that I was able to work through the sub-tass in a way that supported
+eachother.  First I created the authorization events, second was the new game creation. From there
+eachothes. I worked thorugh making the click handler flip picture b/c that woudl help me validitate the API
+logic.  Next I worked through the game evaluation logic, using that in combination with the click
+made it easier to QC the game logic.  Last API call I worked through was pulling the games
+array to support game statistics.  Finally I made sure the user could not click any buttons or the
+board except when the buttons would work.
 
-## Day 2 Plan
-Looking at my inital project plan I WAY under planed for day 2 and some of the
-steps necessary for the MVP.  Updated day two plan:
+## Pitfalls
 
-1. Add image flip to the x click handler
-2. Merge click handler branch wiht master
-3. Spin off a game logic branch
-4. Add a turn handler to check game array for WHOSE turn it is
-5. Merge game logic back to master banch
-6. splin off O click handler branch
-7. have the game auto swithc betweent X/O's turns using function from step 4
-8. Make sure the image updates based on X/O's turn
-9. Merge O click handler back into master branch
-10. Sping off check for win/cats game branch
-11. Integrate logic to check GAMESTORE object for a win/loss
-12. make sure when win/loss occurs it passes gameOver:true to back end
-13. make sure when win/loss occurs it updates the gameStatus display on my front end
-14. Merge back into master branch
-15. Split off new branch call, newGameBoardReset
-16. Make sure new game button clears exisitng game board
+There were a couple things that caused me to thrash:
 
-That might be enough for day two...
+1. images not working on git pages, I ended up using imgur links but took a little over an hour to figure out the picture error of time
+2. I made a REALLY dumb mistake, I set up all my API requests using the APP file from the library API which refrenence the local host.  That meant w
+when I pushed my site to git hub pages it all busted b/c that API requests where pointing to the wrong place.  It took me a while to figure out
+that my team mates where usign a different APP/Config file than myself...DOH.
+
+## Opportunites for Improvment
+
+My code could be a lot simpler, there are places I know I'm repeating my self b/c
+I did not have time to split functions(the game win check for the game statistcs
+and API call are almost line for line the same).
+
+I want to go through this and double check it against a list of best practices, I know
+I'm breaking some like not using camel case in CSS class names
+
+Naming things is hard, right now I know what gameStore.gameStore.games.cells refers
+to but that would be annoying to track back in a few months.
+
+## Next Steps
+
+I want to add an AI bot, depending how much time we have to resubmit I may try
+to work that out
+
+I want to clean up the display, I don't like the way things look so would like
+to put it into a grid and make things resize for moblie.  The site is already
+close to mobile ready b/c I made the inital design so simple, would just need
+to shrink text of headers and other thigns. 

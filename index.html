@@ -27,6 +27,8 @@
       </div>
     </div>
 
+    <!--This is the game message bar basically, nearly all my jQuery text transforms
+    go here-->
     <div class="row">
       <div class="col-xs-12">
         <div>
@@ -89,36 +91,36 @@
         Sign in.
       </button>
 
-          <!-- Sign in Modal -->
-          <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="signInModalLabel">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  <h4 class="modal-title" id="signInModalLabel">Ready...Set..TOE</h4>
-                </div>
-                <div class="modal-body">
-                  <form class='userEvents' id='sign-in'>
-                      <div class="form-group">
-                        <input type="text" name="credentials[email]" id="email" placeholder="Enter Email">
-                        <input type="password" name="credentials[password]" id="password" placeholder="Enter PW">
-                      </div>
-                      <button type="submit" class="btn btn-default">Sign In</button>
-                  </form>
-                </div>
-                <div class="modal-footer">
-                  <div class="row">
-                    <div class="col-xs-8">
-                      <p id="signInMessage"> </p>
-                    </div>
-                    <div class="col-xs-4">
-                      <button type="button" class="btn btn-default" data-dismiss="modal">Close Form</button>
-                    </div>
+        <!-- Sign in Modal -->
+        <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="signInModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="signInModalLabel">Ready...Set..TOE</h4>
+              </div>
+              <div class="modal-body">
+                <form class='userEvents' id='sign-in'>
+                  <div class="form-group">
+                    <input type="text" name="credentials[email]" id="email" placeholder="Enter Email">
+                    <input type="password" name="credentials[password]" id="password" placeholder="Enter PW">
+                  </div>
+                  <button type="submit" class="btn btn-default">Sign In</button>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <div class="row">
+                  <div class="col-xs-8">
+                    <p id="signInMessage"> </p>
+                  </div>
+                  <div class="col-xs-4">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close Form</button>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
 
       </div>
     </div>
@@ -164,96 +166,96 @@
         </div>
       </div>
     </div>
-<!--here goes teh new game/game stats buttons-->
-<div class=row>
-<div class="col-xs-6">
-<form class='gameEvents start-game' id='reset-game'>
-  <button type="submit" class="btn btn-primary btn-lg">Start the game again</button>
-</form>
-</div>
+    <!--here goes teh new game/game stats buttons-->
+    <div class=row>
+      <div class="col-xs-6">
+        <form class='gameEvents start-game' id='reset-game'>
+          <button type="submit" class="btn btn-primary btn-lg">Start the game again</button>
+        </form>
+      </div>
 
-<div class="col-xs-6">
-  <button type="button" class="btn btn-primary btn-lg game-stats" data-toggle="modal" data-target="#gameStats">
+      <div class="col-xs-6">
+        <button type="button" class="btn btn-primary btn-lg game-stats" data-toggle="modal" data-target="#gameStats">
 Look at game stats
 </button>
 
-    <!-- GameStats Modal -->
-    <div class="modal fade" id="gameStats" tabindex="-1" role="dialog" aria-labelledby="gameStatsLabel">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="gameStatsLabel">Here are you stats</h4>
+        <!-- GameStats Modal -->
+        <div class="modal fade" id="gameStats" tabindex="-1" role="dialog" aria-labelledby="gameStatsLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="gameStatsLabel">Here are you stats</h4>
+              </div>
+              <div class="modal-body">
+
+                <p id='game-stats-here'>
+                  Game stats will go here
+                </p>
+
+                <div class="modal-footer">
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Stop looking at your stats</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="modal-body">
+        </div>
 
-            <p id='game-stats-here'>
-              Game stats will go here
-            </p>
+      </div>
+    </div>
 
-            <div class="modal-footer">
-              <div class="row">
-                <div class="col-xs-12">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Stop looking at your stats</button>
+    <div class="row">
+      <!--Here goes the change PW modle-->
+      <!-- Button trigger modal -->
+
+      <div class="col-xs-6">
+        <button type="button" class="btn btn-primary btn-lg change-pw-button" data-toggle="modal" data-target="#changePW">
+  Change Password
+</button>
+        <!-- Change PW Modal -->
+        <div class="modal fade" id="changePW" tabindex="-1" role="dialog" aria-labelledby="changePWLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="changePWLabel">Change your PW</h4>
+              </div>
+              <div class="modal-body">
+
+                <form class='userEvents' id='change-pw'>
+                  <div class="form-group">
+                    <input type="text" name="passwords[old]" id="old-pw" placeholder="Enter old PW">
+                    <input type="password" name="passwords[new]" id="new-pw" placeholder="Enter new PW">
+                  </div>
+                  <button type="submit" class="btn btn-default">Sign In</button>
+                </form>
+
+              </div>
+              <div class="modal-footer">
+                <div class="row">
+                  <div class="col-xs-8">
+                    <p id="changePWMessage"> </p>
+                  </div>
+                  <div class="col-xs-4">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close Form</button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-</div>
-</div>
-
-<div class="row">
-    <!--Here goes the change PW modle-->
-    <!-- Button trigger modal -->
-
-    <div class="col-xs-6">
-    <button type="button" class="btn btn-primary btn-lg change-pw-button" data-toggle="modal" data-target="#changePW">
-  Change Password
-</button>
-    <!-- Change PW Modal -->
-    <div class="modal fade" id="changePW" tabindex="-1" role="dialog" aria-labelledby="changePWLabel">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="changePWLabel">Change your PW</h4>
-          </div>
-          <div class="modal-body">
-
-            <form class='userEvents' id='change-pw'>
-              <div class="form-group">
-                <input type="text" name="passwords[old]" id="old-pw" placeholder="Enter old PW">
-                <input type="password" name="passwords[new]" id="new-pw" placeholder="Enter new PW">
-              </div>
-              <button type="submit" class="btn btn-default">Sign In</button>
-            </form>
-
-          </div>
-          <div class="modal-footer">
-            <div class="row">
-              <div class="col-xs-8">
-                <p id="changePWMessage"> </p>
-              </div>
-              <div class="col-xs-4">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close Form</button>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div class="col-xs-6">
+        <!--The sign out button will be right here -->
+        <form class='userEvents sign-out' id='sign-out'>
+          <button type="submit" class="btn btn-primary btn-lg">Sign Out</button>
+        </form>
       </div>
-    </div>
-</div>
-
-<div class="col-xs-6">
-    <!--The sign out button will be right here -->
-    <form class='userEvents sign-out' id='sign-out'>
-      <button type="submit" class="btn btn-primary btn-lg">Sign Out</button>
-    </form>
-  </div>
     </div>
   </div>
 </body>

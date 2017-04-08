@@ -61,6 +61,38 @@ const didSomeOnWin = function (data) {
   return result
 }
 
+const createStatsPredicate = function (data) {
+  const row1 = [data[0], data[1], data[2]]
+  const row2 = [data[3], data[4], data[5]]
+  const row3 = [data[6], data[7], data[8]]
+  const col1 = [data[0], data[3], data[6]]
+  const col2 = [data[1], data[4], data[7]]
+  const col3 = [data[2], data[5], data[8]]
+  const diag1 = [data[0], data[4], data[8]]
+  const diag2 = [data[2], data[4], data[6]]
+
+  const arraysToCheck = [row1, row2, row3, col1, col2, col3, diag1, diag2]
+
+  let result = 'none'
+
+  if (arraysToCheck.some(xWins)) {
+    $gameStatus.text('X you won... try not gloat about it... you went first afterall')
+    result = 'x Wins'
+  }
+
+  if (arraysToCheck.some(oWins)) {
+    $gameStatus.text('O you won...rub it in that fools face, X should never loose')
+    result = 'o Wins'
+  }
+
+  if (arraysToCheck.every(cRow)) {
+    $gameStatus.text('A TIE...yeah that sounds right')
+    result = 'CATS GAME'
+  }
+  return result
+}
+
 module.exports = {
-  didSomeOnWin
+  didSomeOnWin,
+  createStatsPredicate
 }

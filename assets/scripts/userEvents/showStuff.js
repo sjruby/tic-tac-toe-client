@@ -23,14 +23,3 @@ module.exports = {
   showThingsOnSignIn,
   showThingsOnSignOut
 }
-// .change-pw-button {
-//   visibility: hidden;
-// }
-//
-// .sign-out {
-//   visibility: hidden;
-// }
-//
-// .start-game {
-//   visibility: hidden;
-// }

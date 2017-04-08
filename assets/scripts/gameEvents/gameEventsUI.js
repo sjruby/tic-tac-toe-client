@@ -7,7 +7,6 @@ const $gameStatsDisplay = $('#game-stats-here')
 
 const newGameSuccess = function (data) {
   gameStore.gameStore = data.game
-  console.log(gameStore.gameStore)
   $gameStatus.text('Welcome to the game ' + store.store.email + ' Click the board to get started')
 }
 
@@ -18,7 +17,6 @@ const newGameFailure = function (response) {
 const clickSuccess = function (data) {
   gameStore.gameStore = data.game
   checkGameStatus.didSomeOnWin(gameStore.gameStore.cells)
-  console.log(gameStore.gameStore.cells)
 }
 
 const clickFaliure = function (response) {
@@ -29,6 +27,7 @@ const getGamesSuccesss = function (data) {
   gameStore.allGames = data.games
   const result = calcGameStats.createStatsArray(gameStore.allGames, calcGameStats.createGamesArray)
   $gameStatsDisplay.text(result)
+  $gameStatus.text('Start playing already! Create a new game or finish this one...')
 }
 
 const getGamesFaliure = function (data) {

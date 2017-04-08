@@ -50,7 +50,6 @@ const onClick = function (div) {
 
 const makeTheBoard = function () {
   event.preventDefault()
-  console.log('hey you clicked the right thing')
   const newSrc = 'https://i.imgur.com/jEDl0rb.png'
   $('.game-board').children().children().children().attr('src', newSrc)
   api.newGame()
@@ -61,13 +60,11 @@ const makeTheBoard = function () {
 
 const clearTheBoard = function () {
   event.preventDefault()
-  console.log('hey you clicked the right thing')
   const newSrc = 'https://i.imgur.com/jEDl0rb.png'
   $('.game-board').children().children().children().attr('src', newSrc)
 }
 
 const pullGameStats = function () {
-  console.log('you hit the right button')
   api.getGames()
     .then(ui.getGamesSuccesss)
     .catch(ui.getGamesFaliure)

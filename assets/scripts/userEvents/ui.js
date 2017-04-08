@@ -25,7 +25,7 @@ const onSignInSuccess = function (data) {
 }
 
 const onSignInError = function (response) {
-  $signInUI.text('It failed...heres why...')
+  $signInUI.text('It failed...is that really your password? Are you sure you made and accout?')
 }
 
 const onChangePWSuccess = () => {
@@ -44,7 +44,7 @@ const signOutSuccess = () => {
 }
 
 const signOutFailure = () => {
-  console.log('your stuck!!!!!!!')
+  $gameStatus.text('your stuck!!!!!!!')
 }
 
 module.exports = {

@@ -14,10 +14,10 @@ const createStatsArray = function (games, pullGameArrays) {
   const gameResultsArray = []
 
   for (let i = 0; i < arrayOfGames.length; i++) {
-    gameResultsArray[i] = checkGameStatus.didSomeOnWin(arrayOfGames[i])
+    gameResultsArray[i] = checkGameStatus.createStatsPredicate(arrayOfGames[i])
   }
 
-  const result = 'you played ' + gameResultsArray.length + ' games. Of those you won ' + gameResultsArray.filter((e, i, a) => e === 'x Wins').length + ', and lost ' + gameResultsArray.filter((e, i, a) => e === 'o Wins').length + ' but did not finish ' + gameResultsArray.filter((e, i, a) => e === 'none').length + ' and tied ' +gameResultsArray.filter((e, i, a) => e === 'CATS GAME').length
+  const result = 'you played ' + gameResultsArray.length + ' games. Of those you won ' + gameResultsArray.filter((e, i, a) => e === 'x Wins').length + ', and lost ' + gameResultsArray.filter((e, i, a) => e === 'o Wins').length + ' but did not finish ' + gameResultsArray.filter((e, i, a) => e === 'none').length + ' and tied ' + gameResultsArray.filter((e, i, a) => e === 'CATS GAME').length
 
   return result
 }
