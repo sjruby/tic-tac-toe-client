@@ -28,3 +28,16 @@ $(() => {
   $('#reset-game').on('click', gameEvents.makeTheBoard)
   $('.game-stats').on('click', gameEvents.pullGameStats)
 })
+
+const clearFormsOnClose = function () {
+  $('#sign-up')[0].reset()
+  $('#sign-in')[0].reset()
+  $('#change-pw')[0].reset()
+  $('#signUpMessage').text(' ')
+  $('#signInMessage').text(' ')
+  $('#changePWMessage').text(' ')
+}
+
+$(() => {
+  $('.close-form').on('click', clearFormsOnClose)
+})
