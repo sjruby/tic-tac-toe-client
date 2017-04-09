@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Lawton Street TIC-TAC-TOE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags unless you know what you are doing -->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags unless you know what you are doing -->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body class="container-fluid">
+  <div class="container">
+
+    <!--Header of the page-->
+    <div class=row>
+      <div class="col-xs-12">
+        <div class="well well-lg">
+          <h1>
+        A tic-tac-toe game
+      </h1>
+        </div>
+      </div>
+    </div>
+
+    <!--This is the game message bar basically, nearly all my jQuery text transforms
+    go here-->
+    <div class="row">
+      <div class="col-xs-12">
+        <div>
+          <h3 id="game-status" class="text-center bg-info">
+          Sign in to start a game...or Sign up!
+        </h3>
+        </div>
+        <div class="col-xs-12">
+        </div>
+      </div>
+    </div>
+
+    <!--Here goes the sign up modle-->
+    <!-- Button trigger modal -->
+    <div class="row signInUpButtons">
+      <div class="col-xs-6">
+
+        <button type="button" class="btn btn-primary btn-lg sign-up-button" data-toggle="modal" data-target="#signUpModal">
+        Sign Up
+      </button>
+        <!-- Sign up Modal -->
+        <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signUpLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="signUpLabel">Sign up here</h4>
+              </div>
+              <div class="modal-body">
+
+                <form class='userEvents' id='sign-up'>
+                  <div class="form-group">
+                    <input type="text" name="credentials[email]" id="signUpEmail" placeholder="Enter Email">
+                    <input type="password" name="credentials[password]" id="signUpPassword" placeholder="Enter Password">
+                    <input type="password" name="credentials[password_confirmation]" id="signUpPassword_confirmation" placeholder="Confirm Password">
+                  </div>
+                  <button type="submit" class="btn btn-default">Sign Up</button>
+                </form>
+
+              </div>
+              <div class="modal-footer">
+                <div class="row">
+                  <div class="col-xs-8">
+                    <p id="signUpMessage"> </p>
+                  </div>
+                  <div class="col-xs-4">
+                    <button type="button" class="btn btn-default close-form" data-dismiss="modal">Close Form</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-xs-6">
+        <!--Here goes the sign in modle-->
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary btn-lg sign-in-button" data-toggle="modal" data-target="#signInModal">
+        Sign in.
+      </button>
+
+        <!-- Sign in Modal -->
+        <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="signInModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="signInModalLabel">Ready...Set..TOE</h4>
+              </div>
+              <div class="modal-body">
+                <form class='userEvents' id='sign-in'>
+                  <div class="form-group">
+                    <input type="text" name="credentials[email]" id="email" placeholder="Enter Email">
+                    <input type="password" name="credentials[password]" id="password" placeholder="Enter PW">
+                  </div>
+                  <button type="submit" class="btn btn-default">Sign In</button>
+                </form>
+              </div>
+
+              <div class="modal-footer">
+                <div class="row">
+                  <div class="col-xs-8">
+                    <p id="signInMessage"> </p>
+                  </div>
+                  <div class="col-xs-4">
+                    <button type="button" class="btn btn-default close-form" data-dismiss="modal">Close Form</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!--3 x 3 Tic Tac Toe game board-->
+
+    <div class="game-board">
+
+      <div class="row ttt-row1">
+        <div class="col-xs-4 ttt-board" id='0'>
+          <img src="https://i.imgur.com/jEDl0rb.png" alt="blank-square">
+        </div>
+        <div class="col-xs-4 mid-box ttt-board" id='1'>
+          <img src="https://i.imgur.com/jEDl0rb.png" alt="blank-square">
+        </div>
+        <div class="col-xs-4 ttt-board" id='2'>
+          <img src="https://i.imgur.com/jEDl0rb.png" alt="blank-square">
+        </div>
+      </div>
+
+
+      <div class="row ttt-row2">
+        <div class="col-xs-4 ttt-board" id='3'>
+          <img src="https://i.imgur.com/jEDl0rb.png" alt="blank-square">
+        </div>
+        <div class="col-xs-4 mid-box ttt-board" id='4'>
+          <img src="https://i.imgur.com/jEDl0rb.png" alt="blank-square">
+        </div>
+        <div class="col-xs-4 ttt-board" id='5'>
+          <img src="https://i.imgur.com/jEDl0rb.png" alt="blank-square">
+        </div>
+      </div>
+
+      <div class="row ttt-row3">
+        <div class="col-xs-4 ttt-board" id='6'>
+          <img src="https://i.imgur.com/jEDl0rb.png" alt="blank-square">
+        </div>
+        <div class="col-xs-4 mid-box ttt-board" id='7'>
+          <img src="https://i.imgur.com/jEDl0rb.png" alt="blank-square">
+        </div>
+        <div class="col-xs-4 ttt-board" id='8'>
+          <img src="https://i.imgur.com/jEDl0rb.png" alt="blank-square">
+        </div>
+      </div>
+    </div>
+
+    <br>
+    <br>
+    <!--here goes teh new game/game stats buttons-->
+    <div class=row>
+      <div class="col-xs-6">
+        <form class='gameEvents start-game' id='reset-game'>
+          <button type="submit" class="btn btn-primary btn-lg start-game">Start the game again</button>
+        </form>
+      </div>
+
+      <div class="col-xs-6">
+        <button type="button" class="btn btn-primary btn-lg game-stats" data-toggle="modal" data-target="#gameStats">
+Look at game stats
+</button>
+
+        <!-- GameStats Modal -->
+        <div class="modal fade" id="gameStats" tabindex="-1" role="dialog" aria-labelledby="gameStatsLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="gameStatsLabel">Here are you stats</h4>
+              </div>
+              <div class="modal-body">
+
+                <p id='game-stats-here'>
+                  Game stats will go here
+                </p>
+
+                <div class="modal-footer">
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">Stop looking at your stats</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+<br>
+    <div class="row">
+      <!--Here goes the change PW modle-->
+      <!-- Button trigger modal -->
+
+      <div class="col-xs-6">
+        <button type="button" class="btn btn-primary btn-lg change-pw-button" data-toggle="modal" data-target="#changePW">
+  Change Password
+</button>
+        <!-- Change PW Modal -->
+        <div class="modal fade" id="changePW" tabindex="-1" role="dialog" aria-labelledby="changePWLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="changePWLabel">Change your PW</h4>
+              </div>
+              <div class="modal-body">
+
+                <form class='userEvents' id='change-pw'>
+                  <div class="form-group">
+                    <input type="password" name="passwords[old]" id="old-pw" placeholder="Enter old PW">
+                    <input type="password" name="passwords[new]" id="new-pw" placeholder="Enter new PW">
+                  </div>
+                  <button type="submit" class="btn btn-default">Change PW</button>
+                </form>
+
+              </div>
+              <div class="modal-footer">
+                <div class="row">
+                  <div class="col-xs-8">
+                    <p id="changePWMessage"> </p>
+                  </div>
+                  <div class="col-xs-4">
+                    <button type="button" class="btn btn-default close-form" data-dismiss="modal">Close Form</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xs-6">
+        <!--The sign out button will be right here -->
+        <form class='userEvents sign-out' id='sign-out'>
+          <button type="submit" class="btn btn-primary btn-lg sign-out">Sign Out</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
