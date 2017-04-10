@@ -13,7 +13,7 @@ The primary goals of this project are to:
 
 Link to game:https: //sjruby.github.io/tic-tac-toe-client/
 
-##Technologies used:
+## Technologies used:
   Ajax to interact with the bakend serve
   jQuery to manipulate the DOM to communicate with the user/ mointor user clicks
   Javascript to determine when user has won or lost a game/ calculate game stats
