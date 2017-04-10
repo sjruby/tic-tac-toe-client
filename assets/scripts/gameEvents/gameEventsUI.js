@@ -2,6 +2,7 @@ const $gameStatus = $('#game-status')
 const store = require('../store')
 const gameStore = require('./gameEngine/gameStore')
 const checkGameStatus = require('./gameEngine/checkGameStatus')
+// const dotBot = require('./gameEngine/dotBot')
 const calcGameStats = require('./calcGameStats')
 const $gameStatsDisplay = $('#game-stats-here')
 
@@ -17,6 +18,7 @@ const newGameFailure = function (response) {
 const clickSuccess = function (data) {
   gameStore.gameStore = data.game
   checkGameStatus.didSomeOnWin(gameStore.gameStore.cells)
+  // dotBot.dotMoves()
 }
 
 const clickFaliure = function (response) {

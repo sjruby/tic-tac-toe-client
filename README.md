@@ -14,7 +14,10 @@ The primary goals of this project are to:
 Link to game:https: //sjruby.github.io/tic-tac-toe-client/
 
 ##Technologies used:
-
+  Ajax to interact with the bakend serve
+  jQuery to manipulate the DOM to communicate with the user/ mointor user clicks
+  Javascript to determine when user has won or lost a game/ calculate game stats
+  HTML/Bootstrap CSS to make rejder the game baord.
 
 ## User Stories
 1. As a tic-tac-toe expert, I want the page to tell me if O or X won
@@ -25,7 +28,8 @@ Link to game:https: //sjruby.github.io/tic-tac-toe-client/
 
 
 ## Final Wirefram
-The final wire frame, that includes the hide/show flow when users click on buttons: LINK HERE
+The final wire frame, that includes the hide/show flow when users click on buttons:
+[Imgur](http://i.imgur.com/xI9FAaw.jpg)
 
 ## Approach to Building the App
 I broke it down the requirements three high level tasks with sub tasks under that:
@@ -83,4 +87,4 @@ to work that out
 I want to clean up the display, I don't like the way things look so would like
 to put it into a grid and make things resize for moblie.  The site is already
 close to mobile ready b/c I made the inital design so simple, would just need
-to shrink text of headers and other thigns. 
+to shrink text of headers and other thigns.
